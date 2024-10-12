@@ -16,10 +16,6 @@ $ make
 ```
 
 ### Usage
-```sh
-sscli --help
-```
-
 ```
 USAGE:
    sscli [OPTIONS]
@@ -38,4 +34,11 @@ OPTIONS:
    -p, -prog             search by program
    -o, -home             search by hometown
    -y, -year             search by year
+```
+
+All options valid in sscli are valid for sstui
+
+### Example
+```
+sstui -y 22 -p btech -d comp
 ```
