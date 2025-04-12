@@ -22,6 +22,7 @@ int main(int argc, char **argv){
   char **fhall = c_flag_string("hall", "l", "search by hall", NULL);
   char **fdept = c_flag_string("dept", "d", "search by dept", NULL);
   char **froll = c_flag_string("roll", "r", "search by roll", NULL);
+  char **froom = c_flag_string("room", "v", "search by room", NULL);
   char **fprog = c_flag_string("prog", "p", "search by program", NULL);
   char **fhome = c_flag_string("home", "o", "search by hometown", NULL);
   int  *fyear = c_flag_int("year", "y", "search by year", 0);
@@ -31,6 +32,7 @@ int main(int argc, char **argv){
   bool bdept = *fdept!=NULL;
   bool broll = *froll!=NULL;
   bool bprog = *fprog!=NULL;
+  bool broom = *froom!=NULL;
   bool bhome = *fhome!=NULL;
   bool byear = *fyear!=0;
 
@@ -124,6 +126,9 @@ int main(int argc, char **argv){
         continue;
     if(broll)
       if(strcasestr(roll, *froll)==NULL)
+        continue;
+    if(broom)
+      if(strcasestr(room, *froom)==NULL)
         continue;
     if(bdept)
       if(strcasestr(dept, *fdept)==NULL)
